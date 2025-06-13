@@ -1,4 +1,4 @@
-// No need for <script> tags in a .js file
+
     function showForm(formId) {
         // Get both forms by their IDs
         const loginForm = document.getElementById('login-form');
@@ -12,4 +12,3 @@
         const selectedForm = document.getElementById(formId);
         selectedForm.classList.add('active');
     }
-// No need for closing <script> tag in a .js file

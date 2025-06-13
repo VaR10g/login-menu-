@@ -5,7 +5,7 @@ session_start();
 $errors = [
     // This array will hold error messages for login and registration
     'login' => $_SESSION['login_error'] ?? '',
-    'register' => $_SESSION['register_error'] ?? '',
+    'register' => $_SESSION['register_error'] ?? ''
 ];
 $activeForm = $_SESSION['active_form'] ?? 'login';
 
@@ -13,7 +13,7 @@ session_unset(); // Clear session variables after use
 
 // This function returns the error message if it exists, otherwise returns an empty string
 function showError($error) {
-    return!empty($error) ? "<p class='error-message'>$error</p>" : '';
+    return !empty($error) ? "<p class='error-message'>$error</p>" : '';
 }
 
 // This function checks if the form is active and returns the appropriate class
@@ -38,8 +38,7 @@ function isActiveForm($formName, $activeForm) {
         <div class="form-box <?= isActiveForm('login', $activeForm); ?>" id="login-form">
             <form action="login_register.php" method="post">
                 <h2>Login</h2>
-                
-                <?php echo showError($errors['login']); ?>
+                <?= showError($errors['login']); ?>
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Password" required>
@@ -47,10 +46,11 @@ function isActiveForm($formName, $activeForm) {
                 <p>Don't have an account? <a href="#" onclick="showForm('register-form')">Register</a></p>
             </form>
         </div>
+
          <div class="form-box <?= isActiveForm('register', $activeForm); ?>" id="register-form">
             <form action="login_register.php" method="post">
                 <h2>Register</h2>
-                <?php echo showError($errors['register']); ?>
+                <?= showError($errors['register']); ?>
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Password" required>
