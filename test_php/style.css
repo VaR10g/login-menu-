@@ -94,3 +94,21 @@ p a:hover {
     margin-bottom: 20px;
     text-align: center;
 }
+
+h1 {
+    font-size: 50px;
+}
+
+span {
+    color: #ADEED9;
+}
+
+.box p {
+    font-size: 22px;
+}
+
+.box button {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+}
